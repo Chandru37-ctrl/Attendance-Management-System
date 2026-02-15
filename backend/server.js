@@ -11,7 +11,10 @@ const teacherRoutes = require("./routes/teacherRoutes");
 const subjectRoutes = require("./routes/subjectRoutes");
 const attendanceRoutes = require("./routes/attendanceRoutes");
 
-app.use(cors());
+app.use(cors({
+  origin: ["http://localhost:3000", "https://attendance-management-system-xi.vercel.app"],
+  credentials: true
+}));
 app.use(express.json());
 app.use("/api/auth", authRoutes);
 app.use("/api/students", studentRoutes);
